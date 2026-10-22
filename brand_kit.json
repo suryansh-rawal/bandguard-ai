@@ -1,0 +1,65 @@
+{
+  "_note": "SAMPLE DATA for demo only. ABC Technologies is a fictional company.",
+  "company": {
+    "name": "ABC Technologies",
+    "product": "ABC App",
+    "description": "A reporting and workflow app that helps teams create reports faster."
+  },
+  "voice": {
+    "tone": ["friendly", "professional", "clear"],
+    "avoid": ["aggressive", "exaggerated", "slang", "fear-based urgency"],
+    "style_rules": [
+      "Use 'you' and 'we' to speak directly to the reader.",
+      "Use at most one exclamation mark per post.",
+      "Keep sentences under 25 words where possible."
+    ]
+  },
+  "glossary": {
+    "banned": [
+      { "term": "cheapest", "forms": ["cheapest", "cheap", "dirt cheap"], "use_instead": "affordable", "rule_id": "R-01" },
+      { "term": "guaranteed", "forms": ["guarantee", "guarantees", "guaranteed", "guaranteeing"], "use_instead": "helps you work towards", "rule_id": "R-03" },
+      { "term": "best in the world", "forms": ["best in the world", "world's best", "number one", "no. 1", "no 1", "#1"], "use_instead": "(remove or add approved evidence)", "rule_id": "R-02" },
+      { "term": "revolutionary", "forms": ["revolutionary", "game-changing", "life-changing"], "use_instead": "(use a specific benefit)", "rule_id": "R-04" }
+    ],
+    "preferred": [
+      { "term": "affordable", "meaning": "Use for pricing instead of 'cheap'." },
+      { "term": "reliable", "meaning": "Use for stability instead of 'perfect'." },
+      { "term": "teams", "meaning": "Use instead of 'users' when talking about companies." }
+    ]
+  },
+  "rules": [
+    { "id": "R-01", "title": "Pricing language", "text": "Do not describe the product as 'cheap' or 'cheapest'. Use 'affordable'.", "category": "terminology", "severity": "medium" },
+    { "id": "R-02", "title": "Superlatives need evidence", "text": "Claims such as 'fastest', 'best', 'number one' or 'most popular' are allowed only with approved evidence in the Fact Vault.", "category": "claims", "severity": "high" },
+    { "id": "R-03", "title": "No guarantees", "text": "Do not guarantee outcomes or use absolute promises such as '100% success' or 'double your sales'.", "category": "claims", "severity": "high" },
+    { "id": "R-04", "title": "No exaggeration", "text": "Avoid exaggerated words such as 'revolutionary' or 'game-changing'. Describe a specific benefit instead.", "category": "tone", "severity": "low" },
+    { "id": "R-05", "title": "Protect customer data", "text": "Never include customer names, phone numbers or emails in public content.", "category": "privacy", "severity": "high" },
+    { "id": "R-06", "title": "Regulated claims go to a human", "text": "Any health, financial or legal claim must be reviewed by an authorised reviewer.", "category": "risk", "severity": "high" },
+    { "id": "R-07", "title": "Exclamation marks", "text": "Use at most one exclamation mark per post.", "category": "tone", "severity": "low" }
+  ],
+  "approved_facts": [
+    { "id": "F-01", "claim": "ABC App supports 10 languages.", "keywords": ["languages", "multilingual"], "value": 10, "source": "Product spec v2.3, page 4", "owner": "Product team", "expires_on": "2027-03-31" },
+    { "id": "F-02", "claim": "ABC App helps teams generate reports.", "keywords": ["reports", "report generation"], "source": "Product overview, page 1", "owner": "Product team", "expires_on": "2027-12-31" },
+    { "id": "F-03", "claim": "ABC App is used by more than 500 teams.", "keywords": ["teams", "customers", "used by"], "value": 500, "source": "Sales dashboard, Sept 2026", "owner": "Sales team", "expires_on": "2026-12-31" },
+    { "id": "F-04", "claim": "ABC App plans start at Rs 549 per month.", "keywords": ["price", "plans", "per month", "starting"], "value": 549, "source": "Pricing page, Oct 2026", "owner": "Marketing team", "expires_on": "2026-12-31" },
+    { "id": "F-05", "claim": "ABC App reduced report preparation time by 30% in an internal benchmark of 40 teams.", "keywords": ["faster", "time", "benchmark", "30%"], "value": 30, "source": "Internal benchmark report, Aug 2026", "owner": "Product team", "expires_on": "2027-08-31" }
+  ],
+  "assets": {
+    "logo": { "file": "abc_logo.png", "min_clear_space_px": 20, "rules": ["Do not stretch.", "Do not recolour."] },
+    "colors": [
+      { "name": "Brand Blue", "hex": "#1D4ED8" },
+      { "name": "Ink", "hex": "#111827" },
+      { "name": "Soft Gray", "hex": "#F3F4F6" },
+      { "name": "Accent Orange", "hex": "#F97316" }
+    ],
+    "fonts": ["Inter", "Poppins"]
+  },
+  "privacy": {
+    "mask_patterns": ["email", "phone", "person_name"],
+    "placeholders": { "email": "[EMAIL]", "phone": "[PHONE]", "person_name": "[NAME]" }
+  },
+  "demo_users": [
+    { "id": "user_1", "name": "Asha", "email": "creator@abc.com", "password": "demo123", "role": "creator" },
+    { "id": "user_2", "name": "Rohan", "email": "manager@abc.com", "password": "demo123", "role": "manager" },
+    { "id": "user_3", "name": "Meera", "email": "reviewer@abc.com", "password": "demo123", "role": "reviewer" }
+  ]
+}

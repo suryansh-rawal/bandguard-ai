@@ -1,1 +1,105 @@
 @import "tailwindcss";
+
+/* Palette taken from the Lumière reference: Cosmic Latte, Mocha Cream, Deep Burgundy */
+@theme static {
+  --color-ivory: #f8f2e7;
+  --color-mocha: #e8dcc6;
+  --color-latte: #b7a89a;
+  --color-burgundy: #722f37;
+  --color-burgundy-deep: #571f27;
+  --color-ink: #2a1a1d;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(60rem 30rem at 88% -8%, rgb(183 168 154 / 0.38), transparent 62%),
+    radial-gradient(50rem 32rem at -8% 108%, rgb(114 47 55 / 0.1), transparent 62%),
+    var(--color-ivory);
+  background-attachment: fixed;
+}
+
+/* Card surface */
+.glass {
+  background: rgb(255 255 255 / 0.55);
+  border: 1px solid rgb(183 168 154 / 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 18px 44px -26px rgb(114 47 55 / 0.35);
+}
+
+/* Section title: serif, sentence case */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-burgundy);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-burgundy), #a2575f 55%, var(--color-latte));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Primary button (kept the old class name so other pages still work) */
+.btn-neon {
+  background: var(--color-burgundy);
+  color: var(--color-ivory);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--color-burgundy-deep);
+  box-shadow: 0 10px 24px -12px rgb(114 47 55 / 0.7);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-neon:hover:not(:disabled) {
+  background: var(--color-burgundy-deep);
+  transform: translateY(-1px);
+}
+.btn-neon:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Suggestion chips: one style used everywhere */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgb(183 168 154 / 0.7);
+  background: rgb(255 255 255 / 0.5);
+  color: var(--color-ink);
+  border-radius: 9999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.chip:hover {
+  border-color: var(--color-burgundy);
+  background: rgb(114 47 55 / 0.06);
+}
+.chip-active {
+  background: var(--color-burgundy);
+  border-color: var(--color-burgundy);
+  color: var(--color-ivory);
+}
+.chip-active:hover {
+  background: var(--color-burgundy-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 2px;
+}

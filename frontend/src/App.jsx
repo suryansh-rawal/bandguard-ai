@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Analyze from "./pages/Analyze";
 import Report from "./pages/Report";
@@ -9,6 +9,7 @@ export default function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/analyze" element={<Analyze />} />
       <Route path="/report" element={<Report />} />
+      <Route path="*" element={<Landing />} />
     </Routes>
   );
 }

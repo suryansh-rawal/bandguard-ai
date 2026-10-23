@@ -1,5 +1,52 @@
 {
-  "text": "Our app is the cheapest and fastest in India. We guarantee 100% success!",
-  "content_type": "instagram_post",
-  "intent": "Promote the app and create urgency"
+  "report_id": "rep_001",
+  "status": "red",
+  "masked_text": "Our app is the cheapest and fastest in India. We guarantee 100% success!",
+  "pii_masked": false,
+  "ai_used": true,
+  "issues": [
+    {
+      "id": "i1",
+      "type": "banned_term",
+      "severity": "medium",
+      "original_text": "cheapest",
+      "start": 11,
+      "end": 19,
+      "reason": "'Cheapest' is a banned term in the brand glossary.",
+      "source": { "kind": "guideline", "id": "R-01", "excerpt": "Do not use 'cheapest'. Use 'affordable'." },
+      "suggested_fix": "affordable",
+      "confidence": 0.98,
+      "needs_human": false,
+      "status": "open"
+    },
+    {
+      "id": "i2",
+      "type": "unsupported_claim",
+      "severity": "high",
+      "original_text": "fastest in India",
+      "start": 24,
+      "end": 40,
+      "reason": "No approved evidence supports this superlative claim.",
+      "source": { "kind": "guideline", "id": "R-02", "excerpt": "Superlatives need approved evidence." },
+      "suggested_fix": "helps teams create reports quickly",
+      "confidence": 0.9,
+      "needs_human": false,
+      "status": "open"
+    },
+    {
+      "id": "i3",
+      "type": "banned_term",
+      "severity": "high",
+      "original_text": "guarantee 100% success",
+      "start": 45,
+      "end": 67,
+      "reason": "Guarantees and absolute promises are not allowed.",
+      "source": { "kind": "guideline", "id": "R-03", "excerpt": "No guarantees or absolute outcomes." },
+      "suggested_fix": "help you work towards your goals",
+      "confidence": 0.95,
+      "needs_human": true,
+      "status": "open"
+    }
+  ],
+  "summary": { "total": 3, "high": 2, "medium": 1, "low": 0 }
 }

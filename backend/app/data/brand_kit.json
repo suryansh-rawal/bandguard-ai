@@ -1,0 +1,268 @@
+{
+  "brand": {
+    "name": "BrandGuard AI",
+    "version": "1.2.0",
+    "last_updated": "2026-10-22",
+    "tagline": "The Enterprise Guardrail for Brand Safety & Factual Integrity",
+    "tone_principles": [
+      {
+        "id": "TONE-01",
+        "name": "Empowering & Professional",
+        "description": "Speak with confidence, clarity, and authority without sounding pretentious, arrogant, or dismissive."
+      },
+      {
+        "id": "TONE-02",
+        "name": "Factual & Evidentiary",
+        "description": "Never make unverified promises, absolute guarantees, or hyperbole. Every claim must trace directly to the Fact Vault."
+      },
+      {
+        "id": "TONE-03",
+        "name": "Transparent & Precise",
+        "description": "Use accurate technical terminology; avoid vague buzzwords ('revolutionary magic', 'unbeatable')."
+      }
+    ]
+  },
+  "glossary": {
+    "banned_terms": [
+      {
+        "id": "BAN-001",
+        "term": "guaranteed 100% uptime",
+        "patterns": ["guarantee(?:d|s|ing)? 100% uptime", "100% uptime guarantee(?:d|s)?"],
+        "alternatives": ["99.95% monthly uptime SLA backed by credits"],
+        "reason": "Absolute availability guarantees violate SLA compliance policy and legal liability frameworks.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "compliance"
+      },
+      {
+        "id": "BAN-002",
+        "term": "unhackable",
+        "patterns": ["unhackable", "un-hackable", "immune to (?:all )?hack(?:er)?s"],
+        "alternatives": ["enterprise-grade security with defense-in-depth architecture"],
+        "reason": "Absolute security claims are technically inaccurate and create legal exposure.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "security"
+      },
+      {
+        "id": "BAN-003",
+        "term": "cheap",
+        "patterns": ["\\bcheap\\b", "\\bcheapest\\b"],
+        "alternatives": ["cost-effective", "economical", "high ROI"],
+        "reason": "The word 'cheap' devalues the perceived quality of enterprise software.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "tone"
+      },
+      {
+        "id": "BAN-004",
+        "term": "revolutionary magic",
+        "patterns": ["revolutionary magic", "magic(?:al)? AI", "works like magic"],
+        "alternatives": ["advanced machine learning models", "cutting-edge algorithmic architecture"],
+        "reason": "Unscientific hyperbole diminishes credibility in enterprise sales.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "tone"
+      },
+      {
+        "id": "BAN-005",
+        "term": "foolproof",
+        "patterns": ["\\bfoolproof\\b", "\\bfool-proof\\b"],
+        "alternatives": ["intuitive and error-resilient", "robust"],
+        "reason": "Considered patronizing to users and an unverifiable assertion of zero error.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "tone"
+      },
+      {
+        "id": "BAN-006",
+        "term": "infinite scalability",
+        "patterns": ["infinite(?:ly)? scalab(?:ility|le)", "unlimited scale"],
+        "alternatives": ["elastic multi-region cloud scaling"],
+        "reason": "Physics and cloud provider quotas prevent infinite resources; state exact capacity capabilities.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "technical"
+      },
+      {
+        "id": "BAN-007",
+        "term": "completely risk-free",
+        "patterns": ["completely risk-free", "zero risk", "100% risk free"],
+        "alternatives": ["backed by our 30-day enterprise evaluation agreement"],
+        "reason": "Legally prohibited absolute warranty.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "legal"
+      },
+      {
+        "id": "BAN-008",
+        "term": "zero latency",
+        "patterns": ["zero latency", "0 latency", "no latency"],
+        "alternatives": ["ultra-low sub-50ms average latency"],
+        "reason": "Zero latency is physically impossible in distributed network topologies.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "technical"
+      },
+      {
+        "id": "BAN-009",
+        "term": "never fails",
+        "patterns": ["never fails?", "fail-proof", "cannot fail"],
+        "alternatives": ["engineered for high fault tolerance and automated failover"],
+        "reason": "Unverifiable absolute reliability claim that breaches SLA compliance guidelines.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "reliability"
+      },
+      {
+        "id": "BAN-010",
+        "term": "unbeatable",
+        "patterns": ["\\bunbeatable\\b"],
+        "alternatives": ["industry-leading", "benchmark-topping"],
+        "reason": "Subjective superlative without certified comparison basis.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "tone"
+      }
+    ],
+    "preferred_terms": [
+      {
+        "id": "PREF-001",
+        "term": "Brandguard",
+        "patterns": ["\\bBrandguard\\b", "\\bbrandguard\\b", "\\bBRANDGUARD\\b"],
+        "preferred": "BrandGuard",
+        "reason": "Official brand spelling requires camel case 'BrandGuard'.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-002",
+        "term": "AI powered",
+        "patterns": ["\\bAI powered\\b", "\\bai powered\\b"],
+        "preferred": "AI-powered",
+        "reason": "Compound adjective preceding a noun must be hyphenated.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-003",
+        "term": "AI driven",
+        "patterns": ["\\bAI driven\\b", "\\bai driven\\b"],
+        "preferred": "AI-driven",
+        "reason": "Compound adjective preceding a noun must be hyphenated.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-004",
+        "term": "Log on",
+        "patterns": ["\\bLog on\\b", "\\blog on\\b", "\\bLogin to\\b"],
+        "preferred": "Sign in",
+        "reason": "Brand UI guidelines standardize on 'Sign in'.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-005",
+        "term": "work space",
+        "patterns": ["\\bwork space\\b", "\\bwork-space\\b"],
+        "preferred": "workspace",
+        "reason": "Use the single closed-compound word 'workspace'.",
+        "severity": "suggestion",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-006",
+        "term": "on-premise",
+        "patterns": ["\\bon-premise\\b", "\\bon premise\\b"],
+        "preferred": "on-premises",
+        "reason": "'Premise' means an assumption; physical hardware deployment is 'on-premises'.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2"
+      },
+      {
+        "id": "PREF-007",
+        "term": "crypto-proof",
+        "patterns": ["\\bcrypto-proof\\b", "\\bcrypto proof\\b"],
+        "preferred": "cryptographically verified",
+        "reason": "Imprecise colloquialism; use 'cryptographically verified'.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2"
+      }
+    ]
+  },
+  "fact_vault": [
+    {
+      "id": "FV-001",
+      "statement": "99.95% monthly uptime SLA backed by credits",
+      "keywords": ["uptime", "sla", "availability", "monthly uptime", "99.95%"],
+      "source": "Master Service Agreement v4.1",
+      "category": "SLA",
+      "verified_date": "2026-01-15",
+      "expires_on": "2027-12-31"
+    },
+    {
+      "id": "FV-002",
+      "statement": "ISO 27001 and SOC 2 Type II certified infrastructure",
+      "keywords": ["iso 27001", "soc 2", "soc 2 type ii", "compliance", "certified infrastructure"],
+      "source": "Security & Trust Portal 2026",
+      "category": "Compliance",
+      "verified_date": "2026-02-10",
+      "expires_on": "2027-06-30"
+    },
+    {
+      "id": "FV-003",
+      "statement": "Over 10,000 active enterprise teams globally",
+      "keywords": ["10,000", "enterprise teams", "active teams", "customers", "enterprise customers"],
+      "source": "Q1 2026 Investor Briefing",
+      "category": "Customer Metrics",
+      "verified_date": "2026-01-10",
+      "expires_on": "2026-06-30"
+    },
+    {
+      "id": "FV-004",
+      "statement": "Sub-50ms average inference latency across US and EU regions",
+      "keywords": ["sub-50ms", "50ms", "latency", "inference latency", "response time"],
+      "source": "Benchmark Technical Report Q3 2026",
+      "category": "Performance",
+      "verified_date": "2026-08-01",
+      "expires_on": "2027-03-31"
+    },
+    {
+      "id": "FV-005",
+      "statement": "End-to-end 256-bit AES encryption at rest and TLS 1.3 in transit",
+      "keywords": ["encryption", "256-bit", "aes", "tls 1.3", "at rest", "in transit"],
+      "source": "Whitepaper Security Architecture v3",
+      "category": "Security",
+      "verified_date": "2026-03-20",
+      "expires_on": "2028-01-01"
+    },
+    {
+      "id": "FV-006",
+      "statement": "GDPR and HIPAA compliance readiness certified by third-party auditors",
+      "keywords": ["gdpr", "hipaa", "audit", "compliance readiness", "privacy certified"],
+      "source": "Compliance Audit Report 2026",
+      "category": "Regulatory",
+      "verified_date": "2026-05-12",
+      "expires_on": "2027-05-15"
+    },
+    {
+      "id": "FV-007",
+      "statement": "Zero data retention policy for customer LLM inference pipelines",
+      "keywords": ["zero data retention", "retention policy", "data privacy", "no data stored"],
+      "source": "Privacy & Data Processing Addendum 2026",
+      "category": "Privacy",
+      "verified_date": "2026-04-05",
+      "expires_on": "2027-12-31"
+    },
+    {
+      "id": "FV-008",
+      "statement": "Active presence in 42 availability zones worldwide",
+      "keywords": ["42 availability zones", "data centers", "regions", "availability zones"],
+      "source": "Global Infrastructure Map 2025",
+      "category": "Infrastructure",
+      "verified_date": "2025-01-10",
+      "expires_on": "2025-12-31"
+    }
+  ]
+}

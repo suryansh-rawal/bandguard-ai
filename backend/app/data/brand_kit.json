@@ -123,6 +123,26 @@
         "severity": "warning",
         "source": "Brand Kit - Glossary v1.2",
         "category": "tone"
+      },
+      {
+        "id": "BAN-011",
+        "term": "guarantee 100% success",
+        "patterns": ["(?:[Gg]uarantee(?:d|s|ing)? )?100% (?:success|satisfaction|results?)", "[Gg]uarantee(?:d|s|ing)? (?:success|results?)"],
+        "alternatives": ["help you work towards your goals"],
+        "reason": "Guarantees and absolute promises are not allowed.",
+        "severity": "critical",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "compliance"
+      },
+      {
+        "id": "BAN-012",
+        "term": "unverified superlative",
+        "patterns": ["\\b[Ff]astest\\b(?: (?:in|of|on) (?:the )?[A-Za-z]+)?", "\\b[Nn]umber one\\b", "\\b[Nn]o\\.? ?1\\b", "\\b[Mm]ost popular\\b", "\\b[Bb]est in (?:the )?(?:world|india|class)\\b"],
+        "alternatives": ["helps teams create reports quickly"],
+        "reason": "No approved evidence supports this superlative claim.",
+        "severity": "warning",
+        "source": "Brand Kit - Glossary v1.2",
+        "category": "claims"
       }
     ],
     "preferred_terms": [

@@ -157,5 +157,6 @@ export async function uploadFile(file, contentType) {
   const form = new FormData();
   form.append("file", file);
   form.append("content_type", contentType);
-  return request("/upload", { method: "POST", body: form }, "The file could not be read.");
+  const data = await request("/documents/upload", { method: "POST", body: form }, "The file could not be read.");
+  return { text: data.extracted_text, filename: data.filename };
 }
